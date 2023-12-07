@@ -33,6 +33,72 @@ class CartPage extends StatelessWidget {
                  carPageItems("pizza.png","Pizza","14"),
                  carPageItems("burger.png","Burger","10"),
                  carPageItems("drink.png","Sting","4"),
+
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 5,vertical: 25),
+                    child: Container(
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                blurRadius: 5,
+                                spreadRadius: 1,
+                                offset: Offset(0, 1))
+                          ]),
+                       child: Column(
+                         children: [
+                           Padding(
+                             padding: EdgeInsets.symmetric(vertical: 10),
+                             child: Row(
+                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                               children: [
+                                 Text("Items",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                                 Text("0",style: TextStyle(fontSize: 21),),
+                               ],
+                             ),
+                           ),
+
+                           Divider(color: Colors.black,),
+
+                           Padding(
+                             padding: EdgeInsets.symmetric(vertical: 10),
+                             child: Row(
+                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                               children: [
+                                 Text("Sub Total",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                                 Text("0",style: TextStyle(fontSize: 21),),
+                               ],
+                             ),
+                           ),
+
+                           Padding(
+                             padding: EdgeInsets.symmetric(vertical: 10),
+                             child: Row(
+                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                               children: [
+                                 Text("Delivery",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                                 Text("0",style: TextStyle(fontSize: 21),),
+                               ],
+                             ),
+                           ),
+
+                           Padding(
+                             padding: EdgeInsets.symmetric(vertical: 10),
+                             child: Row(
+                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                               children: [
+                                 Text("Have To Pay",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.red),),
+                                 Text("0",style: TextStyle(fontSize: 21,color: Colors.red),),
+                               ],
+                             ),
+                           ),
+                         ],
+                       ),
+                    ),
+                  ),
                 ],
               ),
             ),
