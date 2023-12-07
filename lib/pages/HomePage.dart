@@ -105,8 +105,6 @@ class HomePage extends StatelessWidget {
 
           NewestWidgets(),
 
-
-
         ],
       ),
     );

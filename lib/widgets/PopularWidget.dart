@@ -12,13 +12,13 @@ class PopularWidget extends StatelessWidget {
         child: Row(
           children: [
             popularCategory(
-                "burger.png", "Hot Burger", "Taste Our Hot Burger", "10"),
+                "burger.png", "Hot Burger", "Taste Our Hot Burger", "10.0"),
             popularCategory(
-                "pizza.png", "Cheese Pizza", "Taste Our Hot Pizza", "14"),
+                "pizza.png", "Cheese Pizza", "Taste Our Hot Pizza", "14.0"),
             popularCategory(
-                "salan.png", "Hot Burger", "Taste Our Hot Burger", "8"),
+                "salan.png", "Salan Curry", "Taste Our Hot Burger", "8.0"),
             popularCategory(
-                "biryani.png", "Hot Burger", "Taste Our Biryani", "12"),
+                "biryani.png", "Pot Biryani", "Taste Our Biryani", "12.0"),
           ],
         ),
       ),
