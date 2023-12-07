@@ -1,5 +1,6 @@
 import 'package:buger_hut_delivary/widgets/AppBarWidget.dart';
 import 'package:buger_hut_delivary/widgets/CategoryWidget.dart';
+import 'package:buger_hut_delivary/widgets/PopularWidget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -74,6 +75,20 @@ class HomePage extends StatelessWidget {
           ),
 
           CategoriesWidget(),
+
+          //Popular
+          Padding(
+              padding: EdgeInsets.only(top: 10,left: 20),
+              child: Text(
+                "Popular",
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold
+                ),
+              ),
+          ),
+
+          PopularWidget(),
 
 
 
