@@ -2,6 +2,7 @@ import 'package:buger_hut_delivary/widgets/AppBarWidget.dart';
 import 'package:buger_hut_delivary/widgets/CategoryWidget.dart';
 import 'package:buger_hut_delivary/widgets/NewestWidget.dart';
 import 'package:buger_hut_delivary/widgets/PopularWidget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -107,6 +108,15 @@ class HomePage extends StatelessWidget {
 
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(CupertinoIcons.cart, color: Colors.red, size: 25.0),
+        backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(40.0),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
     );
   }
 }
