@@ -113,14 +113,12 @@ class NewestWidgets extends StatelessWidget {
                       SizedBox(width: 151,),
 
                       Icon(
-                       CupertinoIcons.cart,
+                        CupertinoIcons.cart,
                         color: Colors.red,
                       )
 
                     ],
                   ),
-
-
 
                 ],
               ),
