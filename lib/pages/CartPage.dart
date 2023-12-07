@@ -74,7 +74,7 @@ class CartPage extends StatelessWidget {
                 children: [
                   Text(name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),),
                   Text("Taste Our Hot "+name,style: TextStyle(fontSize: 14.0),),
-                  Text("\$14", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.red),),
+                  Text("\$"+price, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.red),),
                 ],
               ),
             ),
