@@ -1,4 +1,5 @@
 import 'package:buger_hut_delivary/widgets/AppBarWidget.dart';
+import 'package:buger_hut_delivary/widgets/CategoryWidget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -72,7 +73,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
 
-
+          CategoriesWidget(),
 
 
 
