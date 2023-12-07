@@ -1,5 +1,6 @@
 import 'package:buger_hut_delivary/widgets/AppBarWidget.dart';
 import 'package:buger_hut_delivary/widgets/CategoryWidget.dart';
+import 'package:buger_hut_delivary/widgets/NewestWidget.dart';
 import 'package:buger_hut_delivary/widgets/PopularWidget.dart';
 import 'package:flutter/material.dart';
 
@@ -89,6 +90,20 @@ class HomePage extends StatelessWidget {
           ),
 
           PopularWidget(),
+
+          //Newest
+          Padding(
+            padding: EdgeInsets.only(top: 5,left: 20),
+            child: Text(
+              "Newest",
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold
+              ),
+            ),
+          ),
+
+          NewestWidgets(),
 
 
 
