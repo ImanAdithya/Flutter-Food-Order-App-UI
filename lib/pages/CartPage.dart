@@ -1,4 +1,5 @@
 import 'package:buger_hut_delivary/widgets/AppBarWidget.dart';
+import 'package:buger_hut_delivary/widgets/CartBottomNavBar.dart';
 import 'package:buger_hut_delivary/widgets/DrawWidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -146,7 +147,7 @@ class CartPage extends StatelessWidget {
       ),
 
       drawer: DrawWidget(),
-     // bottomNavigationBar: ,
+      //bottomNavigationBar:CartBottomNavBar(),
     );
   }
 
