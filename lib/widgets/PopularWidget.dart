@@ -11,45 +11,83 @@ class PopularWidget extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 15.0),
         child: Row(
           children: [
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 5),
-              child: Container(
-                width: 170.0,
-                height: 225.0,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10.0),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 10,
-                        offset: Offset(0, 3))
-                  ],
-                ),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10.0),
-                  child:Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        alignment: Alignment.center,
-                        child: Image.asset("assets/burger.png",height: 130.0,),
-                      ),
-                      Text(
-                        "Hot Buger",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
-                        ),
-                      )
+            popularCategory("burger.png","Hot Burger","Taste Our Hot Burger","10"),
+            popularCategory("pizza.png","Cheese Pizza","Taste Our Hot Pizza","14"),
+            popularCategory("salan.png","Hot Burger","Taste Our Hot Burger","8"),
+            popularCategory("biryani.png","Hot Burger","Taste Our Biryani","12"),
 
-                    ],
-                  ) ,
+          ],
+        ),
+      ),
+    );
+  }
+
+  Padding popularCategory(String imagePath,String foodName,String des,String price){
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 5),
+      child: Container(
+        width: 170.0,
+        height: 225.0,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10.0),
+          boxShadow: [
+            BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 2,
+                blurRadius: 10,
+                offset: Offset(0, 3))
+          ],
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10.0),
+          child:Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                alignment: Alignment.center,
+                child: Image.asset("assets/"+imagePath,height: 130.0,),
+              ),
+              Text(
+                foodName,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0,
                 ),
               ),
-            ),
-          ],
+              SizedBox(height: 1,),
+
+              Text(
+                des,
+                style: TextStyle(
+                  fontSize: 12.0,
+                ),
+              ),
+
+              SizedBox(height: 16,),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "\$"+price,
+                    style: TextStyle(
+                        fontSize: 16.0,
+                        color: Colors.red,
+                        fontWeight: FontWeight.bold
+                    ),
+                  ),
+
+                  Icon(
+                    Icons.favorite_border,
+                    color: Colors.red,
+
+                  )
+                ],
+              ),
+
+            ],
+          ) ,
         ),
       ),
     );
