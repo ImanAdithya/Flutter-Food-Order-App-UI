@@ -7,16 +7,31 @@ class DrawWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Drawer(
       child: ListView(
+        //padding: EdgeInsets.zero,
         children: [
-          DrawerHeader(
-              child:UserAccountsDrawerHeader(
-                  decoration: BoxDecoration(
-                    color: Colors.deepOrange,
-                  ),
-                  accountName: Text("Iman Adithya"),
-                  accountEmail: Text("imanAdithya@gmail.com"),
-              ),
-          )
+          const DrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.red,
+            ),
+            child: UserAccountsDrawerHeader(
+                accountName: Text("Iman Adithya",style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),),
+                accountEmail: Text("imanadithya@gmail.com"),
+                currentAccountPicture: CircleAvatar(backgroundImage: AssetImage("assets/avatar.jpg"),),
+                decoration:BoxDecoration(
+                  color: Colors.red
+                )  ,
+            ),
+          ),
+          ListTile(
+            title: const Text('Item 1'),
+            onTap: () {
+            },
+          ),
+          ListTile(
+            title: const Text('Item 2'),
+            onTap: () {
+            },
+          ),
         ],
       ),
     );
