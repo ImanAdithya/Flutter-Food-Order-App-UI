@@ -30,66 +30,77 @@ class CartPage extends StatelessWidget {
                   ),
 
                   //List Items
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 9.0),
-                    child: Container(
-                      width: double.infinity,
-                      height: 100.0,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15.0),
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                blurRadius: 5,
-                                spreadRadius: 1,
-                                offset: Offset(0, 1))
-                          ]),
-                      child: Row(
-                        children: [
-                          //Image
-                          Container(
-                            child: Image.asset("assets/pizza.png",height: 80,width: 150,)
-                          ),
-
-                          //Details
-                          Container(
-                            width: 190.0,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text("Hot Pizza",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),),
-                                Text("Taste Our Hot Pizza",style: TextStyle(fontSize: 14.0),),
-                                Text("\$14", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.red),),
-                              ],
-                            ),
-                          ),
-
-                          //CartCount
-                          Padding(
-                            padding: EdgeInsets.symmetric(vertical: 5.0),
-                            child: Container(
-                              padding: EdgeInsets.all(5.0),
-                              decoration: BoxDecoration(
-                                color: Colors.red,
-                                borderRadius: BorderRadius.circular(7.0),
-                              ),
-                              child: Column(
-
-                              ),
-                            ),
-
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                 carPageItems("pizza.png","Pizza","14"),
+                 carPageItems("burger.png","Burger","10"),
+                 carPageItems("drink.png","Sting","4"),
                 ],
               ),
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Padding carPageItems(String imagePath,String name,String price){
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 9.0),
+      child: Container(
+        width: double.infinity,
+        height: 100.0,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15.0),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  blurRadius: 5,
+                  spreadRadius: 1,
+                  offset: Offset(0, 1))
+            ]),
+        child: Row(
+          children: [
+            //Image
+            Container(
+                child: Image.asset("assets/"+imagePath,height: 80,width: 150,)
+            ),
+
+            //Details
+            Container(
+              width: 210.0,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),),
+                  Text("Taste Our Hot "+name,style: TextStyle(fontSize: 14.0),),
+                  Text("\$14", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.red),),
+                ],
+              ),
+            ),
+
+            //CartCount
+            Padding(
+              padding: EdgeInsets.symmetric(vertical:5.0),
+              child: Container(
+                padding: EdgeInsets.all(5.0),
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Icon(CupertinoIcons.minus,color: Colors.white,),
+                    Text("0",style: TextStyle(fontSize: 18,color: Colors.white,fontWeight: FontWeight.bold),),
+                    Icon(CupertinoIcons.minus,color: Colors.white,),
+                  ],
+                ),
+              ),
+
+            ),
+          ],
+        ),
       ),
     );
   }
