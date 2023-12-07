@@ -7,7 +7,7 @@ class NewestWidgets extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 15,horizontal: 20),
+          padding: EdgeInsets.symmetric(vertical: 15,horizontal: 10),
           child: Column(
             children: [
                Padding(
@@ -31,10 +31,43 @@ class NewestWidgets extends StatelessWidget {
                       children: [
                         //Image
                         Container(
-                          child: Image.asset("assets/"),
+                          alignment: Alignment.center,
+                          child: Image.asset("assets/pizza.png",width: 155.0),
                         ),
 
                         //descrption
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                           children: [
+                             Row(
+                               children: [
+                                 Text(
+                                   "Hot Pizza",
+                                   style: TextStyle(
+                                     fontWeight: FontWeight.bold,
+                                     fontSize: 18,
+                                   ),
+                                 ),
+
+                                 SizedBox(width: 100,),
+
+                                 Icon(
+                                   Icons.favorite_border,
+                                   color: Colors.red,
+                                 )
+
+
+                               ],
+                             ),
+
+                             SizedBox(height: 5,),
+                             
+                             Text("Taste Our Hot Pizza.We\n Provide Our Great Food")
+                           ],
+                                                 ),
+                        )
                       ],
                    ),
                  ),
