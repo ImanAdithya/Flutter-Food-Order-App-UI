@@ -1,4 +1,5 @@
 import 'package:buger_hut_delivary/widgets/AppBarWidget.dart';
+import 'package:buger_hut_delivary/widgets/DrawWidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -30,14 +31,14 @@ class CartPage extends StatelessWidget {
                   ),
 
                   //List Items
-                 carPageItems("pizza.png","Pizza","14"),
-                 carPageItems("burger.png","Burger","10"),
-                 carPageItems("drink.png","Sting","4"),
+                  carPageItems("pizza.png", "Pizza", "14"),
+                  carPageItems("burger.png", "Burger", "10"),
+                  carPageItems("drink.png", "Sting", "4"),
 
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 5,vertical: 25),
+                    padding: EdgeInsets.symmetric(horizontal: 5, vertical: 25),
                     child: Container(
-                      padding: EdgeInsets.all(15),
+                      padding: EdgeInsets.all(25),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.0),
                           color: Colors.white,
@@ -48,55 +49,93 @@ class CartPage extends StatelessWidget {
                                 spreadRadius: 1,
                                 offset: Offset(0, 1))
                           ]),
-                       child: Column(
-                         children: [
-                           Padding(
-                             padding: EdgeInsets.symmetric(vertical: 10),
-                             child: Row(
-                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                               children: [
-                                 Text("Items",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                                 Text("0",style: TextStyle(fontSize: 21),),
-                               ],
-                             ),
-                           ),
-
-                           Divider(color: Colors.black,),
-
-                           Padding(
-                             padding: EdgeInsets.symmetric(vertical: 10),
-                             child: Row(
-                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                               children: [
-                                 Text("Sub Total",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                                 Text("0",style: TextStyle(fontSize: 21),),
-                               ],
-                             ),
-                           ),
-
-                           Padding(
-                             padding: EdgeInsets.symmetric(vertical: 10),
-                             child: Row(
-                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                               children: [
-                                 Text("Delivery",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                                 Text("0",style: TextStyle(fontSize: 21),),
-                               ],
-                             ),
-                           ),
-
-                           Padding(
-                             padding: EdgeInsets.symmetric(vertical: 10),
-                             child: Row(
-                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                               children: [
-                                 Text("Have To Pay",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.red),),
-                                 Text("0",style: TextStyle(fontSize: 21,color: Colors.red),),
-                               ],
-                             ),
-                           ),
-                         ],
-                       ),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(vertical: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Items",
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  "0",
+                                  style: TextStyle(fontSize: 21),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Divider(
+                            color: Colors.black,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(vertical: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Sub Total",
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  "0",
+                                  style: TextStyle(fontSize: 21),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Divider(
+                            color: Colors.black.withOpacity(0.3),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(vertical: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Delivery",
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  "0",
+                                  style: TextStyle(fontSize: 21),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Divider(
+                            color: Colors.black.withOpacity(0.3),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(vertical: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Total",
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.red),
+                                ),
+                                Text(
+                                  "0",
+                                  style: TextStyle(
+                                      fontSize: 21, color: Colors.red),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -105,10 +144,13 @@ class CartPage extends StatelessWidget {
           ),
         ],
       ),
+
+      drawer: DrawWidget(),
+     // bottomNavigationBar: ,
     );
   }
 
-  Padding carPageItems(String imagePath,String name,String price){
+  Padding carPageItems(String imagePath, String name, String price) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 9.0),
       child: Container(
@@ -128,8 +170,11 @@ class CartPage extends StatelessWidget {
           children: [
             //Image
             Container(
-                child: Image.asset("assets/"+imagePath,height: 80,width: 150,)
-            ),
+                child: Image.asset(
+              "assets/" + imagePath,
+              height: 80,
+              width: 150,
+            )),
 
             //Details
             Container(
@@ -138,16 +183,29 @@ class CartPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),),
-                  Text("Taste Our Hot "+name,style: TextStyle(fontSize: 14.0),),
-                  Text("\$"+price, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.red),),
+                  Text(
+                    name,
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                  ),
+                  Text(
+                    "Taste Our Hot " + name,
+                    style: TextStyle(fontSize: 14.0),
+                  ),
+                  Text(
+                    "\$" + price,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                        color: Colors.red),
+                  ),
                 ],
               ),
             ),
 
             //CartCount
             Padding(
-              padding: EdgeInsets.symmetric(vertical:5.0),
+              padding: EdgeInsets.symmetric(vertical: 5.0),
               child: Container(
                 padding: EdgeInsets.all(5.0),
                 decoration: BoxDecoration(
@@ -157,13 +215,24 @@ class CartPage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Icon(CupertinoIcons.minus,color: Colors.white,),
-                    Text("0",style: TextStyle(fontSize: 18,color: Colors.white,fontWeight: FontWeight.bold),),
-                    Icon(CupertinoIcons.minus,color: Colors.white,),
+                    Icon(
+                      CupertinoIcons.minus,
+                      color: Colors.white,
+                    ),
+                    Text(
+                      "0",
+                      style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Icon(
+                      CupertinoIcons.minus,
+                      color: Colors.white,
+                    ),
                   ],
                 ),
               ),
-
             ),
           ],
         ),
