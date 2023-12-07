@@ -1,5 +1,6 @@
 import 'package:buger_hut_delivary/widgets/AppBarWidget.dart';
 import 'package:buger_hut_delivary/widgets/CategoryWidget.dart';
+import 'package:buger_hut_delivary/widgets/DrawWidget.dart';
 import 'package:buger_hut_delivary/widgets/NewestWidget.dart';
 import 'package:buger_hut_delivary/widgets/PopularWidget.dart';
 import 'package:flutter/cupertino.dart';
@@ -109,33 +110,7 @@ class HomePage extends StatelessWidget {
         ],
       ),
 
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Drawer Header'),
-            ),
-            ListTile(
-              title: const Text('Item 1'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
-            ),
-            ListTile(
-              title: const Text('Item 2'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: DrawWidget(),
 
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
