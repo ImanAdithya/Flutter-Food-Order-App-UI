@@ -1,3 +1,4 @@
+import 'package:buger_hut_delivary/pages/CartPage.dart';
 import 'package:buger_hut_delivary/widgets/AppBarWidget.dart';
 import 'package:buger_hut_delivary/widgets/CategoryWidget.dart';
 import 'package:buger_hut_delivary/widgets/DrawWidget.dart';
@@ -113,7 +114,10 @@ class HomePage extends StatelessWidget {
       drawer: DrawWidget(),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => CartPage()),
+          );
+        },
         child: Icon(CupertinoIcons.cart, color: Colors.red, size: 25.0),
         backgroundColor: Colors.white,
         shape: RoundedRectangleBorder(
