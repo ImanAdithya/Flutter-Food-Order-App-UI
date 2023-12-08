@@ -1,7 +1,10 @@
 import 'package:buger_hut_delivary/widgets/AppBarWidget.dart';
+import 'package:buger_hut_delivary/widgets/CartBottomNavBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+
+import '../widgets/DrawWidget.dart';
 
 class ItemPage extends StatelessWidget {
   const ItemPage({super.key});
@@ -16,6 +19,8 @@ class ItemPage extends StatelessWidget {
             //app bar
             AppBarWidget(),
 
+            SizedBox(height: 20,),
+
             //Image
             Padding(
               padding: EdgeInsets.all(16),
@@ -24,7 +29,7 @@ class ItemPage extends StatelessWidget {
 
             //Rating bar and Price
             Padding(
-                padding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 20.0),
+                padding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 15.0),
               child: Column(
                  children: [
                    Row(
@@ -104,18 +109,40 @@ class ItemPage extends StatelessWidget {
                      child: Text("Sizzling, gooey, and tantalizing, a hot pizza emerges from the oven, its golden"
                          " crust adorned with bubbling cheese that stretches in strings with each indulgent bite. "
                          "The air is filled with the savory aroma of tomato sauce, herbs, and pepperoni, creating an "
-                         "irresistible symphony that beckons taste buds to savor every delicious note.",
+                         "irresistible symphony that beckons taste buds to savor every delicious note.Molten mozzarella blankets zesty pepperoni, melding "
+                         "into a flavorful.",
                        textAlign: TextAlign.start,
                        style: TextStyle(fontSize: 14),
+                     ),
+                   ),
+
+                   Padding(
+                       padding: EdgeInsets.symmetric(vertical: 10.0),
+                     child: Row(
+                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                       children: [
+                         Text("Delivery Time",
+                           style: TextStyle(fontWeight:FontWeight.bold,fontStyle:FontStyle.italic,fontSize: 15),
+                         ),
+
+                         Row(
+                           children: [
+                             Icon(Icons.punch_clock,color: Colors.red,),
+                             SizedBox(width: 5,),
+                             Text("30 Minitues",style:TextStyle(fontSize: 15),)
+                           ],
+                         )
+                       ],
                      ),
                    ),
                  ],
               ),
             ),
-
           ],
         ),
       ),
+      bottomNavigationBar: CartBottomNavBar(),
+      drawer: DrawWidget(),
     );
   }
 }
