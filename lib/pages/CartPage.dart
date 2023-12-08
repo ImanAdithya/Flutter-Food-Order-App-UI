@@ -147,7 +147,7 @@ class CartPage extends StatelessWidget {
       ),
 
       drawer: DrawWidget(),
-      //bottomNavigationBar:CartBottomNavBar(),
+      bottomNavigationBar:CartBottomNavBar(),
     );
   }
 

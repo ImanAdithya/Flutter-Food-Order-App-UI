@@ -48,7 +48,7 @@ class HomePage extends StatelessWidget {
                       child: Padding(
                           padding:EdgeInsets.symmetric(horizontal: 35.0),
                           child: TextFormField(
-                            readOnly: true,
+                            //readOnly: true,
                             decoration: InputDecoration(
                               hintText: "What would you like to have?",
                               border: InputBorder.none
