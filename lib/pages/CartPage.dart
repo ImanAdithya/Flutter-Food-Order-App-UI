@@ -23,7 +23,7 @@ class CartPage extends StatelessWidget {
 
                   //Order List
                   Padding(
-                    padding: EdgeInsets.only(top: 20, left: 10, bottom: 10),
+                    padding: EdgeInsets.only(top: 10, left: 10, bottom: 10),
                     child: Text(
                       "Order List",
                       style: TextStyle(
@@ -37,7 +37,7 @@ class CartPage extends StatelessWidget {
                   carPageItems("drink.png", "Sting", "4"),
 
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 5, vertical: 25),
+                    padding: EdgeInsets.symmetric(horizontal: 5, vertical: 12),
                     child: Container(
                       padding: EdgeInsets.all(25),
                       decoration: BoxDecoration(
@@ -153,7 +153,7 @@ class CartPage extends StatelessWidget {
 
   Padding carPageItems(String imagePath, String name, String price) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 9.0),
+      padding: EdgeInsets.symmetric(vertical: 4.0),
       child: Container(
         width: double.infinity,
         height: 100.0,

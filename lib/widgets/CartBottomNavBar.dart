@@ -7,6 +7,7 @@ class CartBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
+      height: 60.0,
       color:Color(0xFFF5F5F3),
       child: Container(
         //color: Colors.white,
@@ -17,9 +18,9 @@ class CartBottomNavBar extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text("Have To Pay",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black),),
-                SizedBox(width: 15,),
-                Text("\$23",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.red),)
+                Text("Have To Pay:",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black),),
+                SizedBox(width: 2,),
+                Text("\$23",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.red),)
               ],
             ),
 
